@@ -6,7 +6,6 @@ class Node:
         self.right = None
 
 
-# Preorder: Root, Left, Right
 def preorder(root):
     if root:
         print(root.data, end=" ")
@@ -14,7 +13,6 @@ def preorder(root):
         preorder(root.right)
 
 
-# Inorder: Left, Root, Right
 def inorder(root):
     if root:
         inorder(root.left)
@@ -22,7 +20,6 @@ def inorder(root):
         inorder(root.right)
 
 
-# Postorder: Left, Right, Root
 def postorder(root):
     if root:
         postorder(root.left)
@@ -30,18 +27,29 @@ def postorder(root):
         print(root.data, end=" ")
 
 
-# Create Tree
+# Create Tree: RENZ LAREÑO
 root = Node("R")
+
 root.left = Node("E")
 root.right = Node("N")
-root.right.right = Node("Z")
+
+root.left.left = Node("Z")
+root.left.right = Node("L")
+
+root.right.left = Node("A")
+root.right.right = Node("R")
+
+root.left.left.left = Node("E")
+root.left.left.right = Node("Ñ")
+
+root.left.right.left = Node("O")
 
 
-print("DFS Preorder:")
+print("Preorder (Root, Left, Right):")
 preorder(root)
 
-print("\nDFS Inorder:")
+print("\n\nInorder (Left, Root, Right):")
 inorder(root)
 
-print("\nDFS Postorder:")
+print("\n\nPostorder (Left, Right, Root):")
 postorder(root)
